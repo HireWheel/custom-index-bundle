@@ -1,12 +1,12 @@
 {
-    "name": "intaro/custom-index-bundle",
-    "description": "Annotation and command for control entity custom indexes",
+    "name": "hirewheel/custom-index-bundle",
+    "description": "Postgres Custom Indexes: Adapted from Intaro Custom Index Bundle",
     "keywords": ["symfony2", "index", "postgresql-index"],
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [{
-        "name": "Chernyavtsev Ivan",
-        "email": "chernyavtsev@intaro.ru",
+        "name": "Hirewheel",
+        "email": "support@hirewheel.com",
         "role": "Developer"
     }],
     "require": {

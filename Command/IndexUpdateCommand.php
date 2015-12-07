@@ -21,6 +21,8 @@ class IndexUpdateCommand extends Command
 
     const DUMPSQL = 'dump-sql';
 
+    const EM = 'em';
+
     // array with abstract classes
     protected $abstractClasses = [];
 
@@ -38,6 +40,7 @@ class IndexUpdateCommand extends Command
         $this
             ->setName('intaro:doctrine:index:update')
             ->addOption(self::DUMPSQL, null, InputOption::VALUE_NONE, 'Dump sql instead creating index')
+            ->addOption(self::EM, null, InputOption::VALUE_OPTIONAL, 'Entity manager to load')
             ->setDescription('Create new and drop not existing custom indexes');
     }
 
@@ -51,7 +54,7 @@ class IndexUpdateCommand extends Command
 
         $kernel             = $this->getApplication()->getKernel();
         $container          = $kernel->getContainer();
-        $em                 = $container->get('doctrine')->getManager();
+        $em                 = $container->get('doctrine')->getManager($this->input->getOption(self::EM));
         $this->validator    = $container->get('validator');
         $connection         = $em->getConnection();
 
